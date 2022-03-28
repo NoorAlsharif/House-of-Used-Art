@@ -1,7 +1,7 @@
 # Used House of Art
-![Logo image](https://trello.com/c/JqoVMAnm/1-logo)
-King abdulaziz University
-Faculty of Computing and Information Technology
+![Logo image](https://trello.com/1/cards/6241b3370717cc2af53aa1ef/attachments/6241b3685b515e2b5ba91c7c/download/UHoA.png)<br />
+King abdulaziz University<br />
+Faculty of Computing and Information Technology<br />
 Senior Project 2022
 
 ## Project Abstract
