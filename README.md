@@ -1,5 +1,5 @@
 # Used House of Art
-![Logo image](https://drive.google.com/drive/u/5/folders/17Sqfyl9e8ez5EBfnHIqo5YfwDS_eAptD)
+![Logo image](https://drive.google.com/file/d/1PJuMaqgHSd70AaC_ZZgOSlN1ZiqjrX9x/view)
 King abdulaziz University
 Faculty of Computing and Information Technology
 Senior Project 2022
