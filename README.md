@@ -1,5 +1,5 @@
 # Used House of Art
-![UHoA](https://user-images.githubusercontent.com/71409736/160405257-77eda0f5-a355-414e-9bc3-06d92d40127f.png =250x250)<br />
+![UHoA](https://user-images.githubusercontent.com/71409736/160405257-77eda0f5-a355-414e-9bc3-06d92d40127f.png|width=200px])<br />
 King abdulaziz University<br />
 Faculty of Computing and Information Technology<br />
 Senior Project 2022
