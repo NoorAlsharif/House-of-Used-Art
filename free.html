@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html >
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>أقسامنا</title>
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+        <link rel="stylesheet" href="style.css">
+
+
+
+    </head>
+
+    <body>
+
+        <section id="header">
+
+
+
+            <div>
+
+                <ul id="navbar">
+                    <li> <div class="fas fa-user" id="login-btn"></div></li>
+                    <li>  <div class="fas fa-search" id="search-btn"></div></li>
+                    <li></li>
+                    <li><a href="offer.html">اعرض ادواتك</a></li>
+                    <li><a href="used-tool.html">ادوات مستخدمة</a></li>
+                    <li><a href="new-tool.html">ادوات جديدة</a></li>
+                    <li><a href="free-tool.html">ادوات مجانية</a></li>
+                    <li><a href="sections.html">جميع الاقسام</a></li>
+                    <li><a class="active" href="index.html"> الصفحة الرئيسية</a></li>
+
+                </ul>
+
+            </div>
+            <a href="#"><img src="img/" class="logo" alt=""></a> 
+
+
+            <form action="" class="search-form">
+                <label for="search-box" class="fas fa-search"></label>
+
+                <input type="search" id="search-box" placeholder=".......ابحث هنا">
+            </form>
+
+
+            <form action="" class="login-form">
+                <h3>تسجيل الدخول</h3>
+                <input type="email" placeholder="بريدك الالكتروني" class="box">
+                <input type="password" placeholder="كلمة السر " class="box">
+                <p>نسيت كلمة السر<a href="#">اضغط هنا</a></p>
+                <p>ليس لديك حساب<a href="#"> انشاء حساب</a></p>
+                <input type="submit" value="تسجيل الدخول" class="btn">
+            </form>
+
+
+        </section>
+
+
+        <section id ="products-header" class="section-p1" class="section-m1">
+
+
+            <select name="" class="order-by">
+                <option hidden>ترتيب حسب</option>
+                <option>السعر من الاكثر الى الاقل</option>
+                <option>السعر من الاقل الى الاكثر</option>
+                <option>الاحدث</option>
+            </select>
+
+
+        </section>
+
+
+
+        <section id="product1" class="section-p1"  >
+
+
+
+
+
+
+            <form action="" class="filter-form"  >
+
+
+                <div class="multiselect">
+                    <div class="selectBox" onclick="showCheckboxes2()">
+                        <select id="select">
+                            <option  >حالة المنتج</option>
+                        </select >
+                        <div class="overSelect"></div>
+                    </div>
+                    <div id="checkboxes2">
+
+                        <label>جديد
+                            <input type="radio" name="state" id="جديد"/>
+                        </label>
+
+                        <label>مستخدم
+                            <input type="radio" name="state" id="مستخدم"/>
+                        </label>
+                    </div>
+                </div>
+
+
+                <div class="multiselect">
+                    <div class="selectBox" onclick="showCheckboxes()">
+                        <select id="select">
+                            <option  >قسم المنتج</option>
+                        </select >
+                        <div class="overSelect"></div>
+                    </div>
+                    <div id="checkboxes">
+                        <label for="one">ادوات رسم
+                            <input type="checkbox" id="ادوات رسم" />
+                        </label>
+                        <label for="two">ادوات حياكة
+                            <input type="checkbox" id="ادوات حياكة" />
+                        </label>
+                        <label for="three">ادوات طلاء
+                            <input type="checkbox" id="ادوات طلاء" />
+                        </label>
+                        <label for="four"> ادوات نحت
+                            <input type="checkbox" id="ادوات نحت" />
+                        </label>
+                        <label for="five">اوراق ولوحات
+                            <input type="checkbox" id="اوراق ولوحات"/>
+                        </label>
+                    </div>
+                </div>
+
+
+                <div class="multiselect">
+                    <div class="selectBox" onclick="showCheckboxes1()">
+                        <select id="select">
+                            <option  >مدينة البائع</option>
+                        </select >
+                        <div class="overSelect"></div>
+                    </div>
+                    <div id="checkboxes1">
+                        <label for="one">جدة
+                            <input type="checkbox" id=" جدة" />
+                        </label>
+                        <label for="two">الرياض
+                            <input type="checkbox" id=" الرياض" />
+                        </label>
+                        <label for="three">الدمام
+                            <input type="checkbox" id=" الدمام" />
+                        </label>
+                        <label for="four"> المنطقة الشرقية
+                            <input type="checkbox" id=" المنطقة الشرقية" />
+                        </label>
+                        <label for="five"> جازان
+                            <input type="checkbox" id=" جازان"/>
+                        </label>
+
+                    </div>
+                </div>
+
+
+                <div class="multiselect">
+                    <div class="selectBox" onclick="showCheckboxes3()">
+                        <select id="select">
+                            <option  >نطاق السعر</option>
+                        </select >
+                        <div class="overSelect"></div>
+                    </div>
+                    <div id="checkboxes3">
+
+
+                        <label>  مجاني 
+                            <input type="radio" name="price" id="مجاني">
+                        </label> 
+
+
+                        <div class="min-max">
+                            <div class="min">
+                                <label>اقل قيمة</label><span id="min-value"></span>
+                            </div>
+                            <div class="max">
+                                <label>اعلى قيمة</label><span id="max-value"></span>
+                            </div>     
+                        </div> 
+
+                        <div class="min-max-range">
+                            <input type="range" min="0" max="10000" value="2000" class="range" id="min">
+                            <input type="range" min="0" max="10000" value="8000" class="range" id="max">      
+                        </div>    
+
+                        <div style="clear: both;">
+                        </div>    
+
+
+                    </div>
+                </div>
+
+
+                <div><button class="tafeel">تفعيل</button></div>  
+
+
+
+            </form>
+
+
+            <div class="pro-container">
+                <div class="pro">
+                    <img src="img/p1.jpg" alt="">
+                    <div class="des">
+                        <span>مستخدم</span>
+                        <h5>الوان زيتية</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>$35</h4>
+                    </div>
+                    <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+                </div>
+
+                <div class="pro">
+                    <img src="img/p1.jpg" alt="">
+                    <div class="des">
+                        <span>مستخدم</span>
+                        <h5>الوان زيتية</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>$35</h4>
+                    </div>
+                    <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+                </div>
+
+                <div class="pro">
+                    <img src="img/p1.jpg" alt="">
+                    <div class="des">
+                        <span>مستخدم</span>
+                        <h5>الوان زيتية</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>$35</h4>
+                    </div>
+                    <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+                </div>
+
+                <div class="pro">
+                    <img src="img/p1.jpg" alt="">
+                    <div class="des">
+                        <span>مستخدم</span>
+                        <h5>الوان زيتية</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>$35</h4>
+                    </div>
+                    <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+                </div>
+
+                <div class="pro">
+                    <img src="img/p1.jpg" alt="">
+                    <div class="des">
+                        <span>مستخدم</span>
+                        <h5>الوان زيتية</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>$35</h4>
+                    </div>
+                    <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+                </div>
+
+                <div class="pro">
+                    <img src="img/p1.jpg" alt="">
+                    <div class="des">
+                        <span>مستخدم</span>
+                        <h5>الوان زيتية</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>$35</h4>
+                    </div>
+                    <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+                </div>
+
+                <div class="pro">
+                    <img src="img/p1.jpg" alt="">
+                    <div class="des">
+                        <span>مستخدم</span>
+                        <h5>الوان زيتية</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>$35</h4>
+                    </div>
+                    <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+                </div>
+
+                <div class="pro">
+                    <img src="img/p1.jpg" alt="">
+                    <div class="des">
+                        <span>مستخدم</span>
+                        <h5>الوان زيتية</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>$35</h4>
+                    </div>
+                    <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+                </div>
+
+
+                <div class="pro">
+                    <img src="img/p1.jpg" alt="">
+                    <div class="des">
+                        <span>مستخدم</span>
+                        <h5>الوان زيتية</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>$35</h4>
+                    </div>
+                    <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+                </div>
+
+
+                <div class="pro">
+                    <img src="img/p1.jpg" alt="">
+                    <div class="des">
+                        <span>مستخدم</span>
+                        <h5>الوان زيتية</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>$35</h4>
+                    </div>
+                    <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+                </div>
+
+
+                <div class="pro">
+                    <img src="img/p1.jpg" alt="">
+                    <div class="des">
+                        <span>مستخدم</span>
+                        <h5>الوان زيتية</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>$35</h4>
+                    </div>
+                    <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+
+
+
+
+                </div>
+
+
+                <div class="pro">
+                    <img src="img/p1.jpg" alt="">
+                    <div class="des">
+                        <span>مستخدم</span>
+                        <h5>الوان زيتية</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>$35</h4>
+                    </div>
+                    <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+                </div>
+            </div>
+
+
+        </section>
+
+
+
+        <footer class="section-p1">
+            <div class="col">
+                <img class="logo" src="img/" alt="">
+                <h4>تواصل </h4>
+                <p><strong>:العنوان</strong>.....</p>
+                <p><strong>:هاتف</strong>.....</p>
+                <p><strong>:ساعات العمل</strong>.....</p>
+                <div class="follow">
+                    <h4>تابعنا على قنوات التواصل </h4>
+                    <div class="icon">
+                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-pinterest"></i>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col"
+                 <h4>من نحن</h4>
+                <a href="#">عنا</a>
+                <a href="#">سيايات الخصوصية</a>
+                <a href="#">Terms & condetions</a>
+                <a href="#">تواصل معنا</a>
+            </div>
+
+            <div class="col"
+                 <h4>حسابي</h4>
+                <a href="#">تسجيل الدخول</a>
+                <a href="#">المساعدة</a>
+            </div>
+
+            <div class="copyright">@2021 all copyright are reserved</div>
+        </footer>
+
+
+        <script src="script.js"></script>
+
+
+    </body>
+
+</html>
