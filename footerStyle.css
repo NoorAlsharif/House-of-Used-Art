@@ -1,0 +1,67 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Mar 30, 2022, 2:53:07 PM
+    Author     : nooralsharif
+*/
+
+footer{
+    display: flex;
+    flex-wrap:wrap ;
+    justify-content: space-between;
+    background-color: #FFD800;
+    direction: rtl;
+}
+
+
+footer .col{
+    display: flex;
+    flex-direction:column ;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+footer.logo{
+    margin-bottom: 30px;
+}
+
+footer h4{
+    font-size: 14px;
+    padding-bottom: 20px;
+}
+
+footer p{
+    font-size: 13px;
+    padding-bottom: 20px;
+    margin:0 0 8px 0 ;
+}
+
+footer a{
+    font-size: 13px;
+    text-decoration: none;
+    color:#222;
+    margin-bottom:  10px;
+}
+
+footer .follow{
+    margin-top: 20px;
+
+}
+
+footer .follow i{
+    color: #465b52;
+    padding-right:4px ;
+    cursor:pointer;
+}
+
+footer .follow i:hover,footer a:hover{
+    color: #088178
+}
+
+footer .copyright{
+    width: 100%;
+    text-align: center;
+}

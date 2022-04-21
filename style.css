@@ -1,6 +1,28 @@
 @import url('https://fonts.googleapis.com/css?family=Cairo');
 
+.rainbow-box {
+    /*background-color: #302244;*/
+    border: 8px solid transparent;
+    border-image: linear-gradient(var(--angle), #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%)1;
+    border-image-slice: 1;
+    animation: 8s rotate linear infinite;
 
+    /*height: 200px;*/
+    /*margin: 20px auto;
+    /*width: 200px;*/
+    --angle: 0deg;
+}
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+            
 *{
     margin: 0;
     padding: 0;
@@ -49,66 +71,10 @@ p{
 
 body{
     width:100%;
+    background-color: #FEFFF5;
 }
 
-#header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10x 80px; 
-    background: #c7c7c7;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
-    z-index: 999;
-    position: sticky;
-    top: 0;
-    right: 0;
-
-}
-
-
-
-
-#navbar{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px 80px; 
-
-}
-
-#navbar li{
-    list-style: none;
-    padding: 0 20px;
-    position: relative;
-
-}
-
-#navbar li a{
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 600;
-    color: #1a1a1a;
-    transition:0.3s ease ;
-
-}
-
-#navbar li a:hover,
-#navbar li a.active,
-#navbar  div:hover{
-    color: #088178;
-
-}
-
-#navbar li a.active::after,
-#navbar li a:hover::after{
-    content: "";
-    width: 30%;
-    height: 2px;
-    background-color: #088178;
-    position: absolute;
-    bottom: -4px;
-    left: 20px;
-}
+/*header was here*/
 
 
 /* Home Page */
@@ -388,63 +354,9 @@ button.white{
 }
 
 
-footer{
-    display: flex;
-    flex-wrap:wrap ;
-    justify-content: space-between;
-}
 
 
-footer .col{
-    display: flex;
-    flex-direction:column ;
-    align-items: flex-start;
-    margin-bottom: 20px;
-}
-
-footer.logo{
-    margin-bottom: 30px;
-}
-
-footer h4{
-    font-size: 14px;
-    padding-bottom: 20px;
-}
-
-footer p{
-    font-size: 13px;
-    padding-bottom: 20px;
-    margin:0 0 8px 0 ;
-}
-
-footer a{
-    font-size: 13px;
-    text-decoration: none;
-    color:#222;
-    margin-bottom:  10px;
-}
-
-footer .follow{
-    margin-top: 20px;
-
-}
-
-footer .follow i{
-    color: #465b52;
-    padding-right:4px ;
-    cursor:pointer;
-}
-
-footer .follow i:hover,footer a:hover{
-    color: #088178
-}
-
-footer .copyright{
-    width: 100%;
-    text-align: center;
-}
-
-
+/*footer was here*/
 
 
 #header .search-form{
