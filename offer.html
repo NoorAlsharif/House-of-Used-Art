@@ -20,13 +20,13 @@ and open the template in the editor.
             label{
                 padding-right: 3%; 
                 font-size: 18px;
-                width: 100%;
+                /*width: 100%;*/
             }
             div input{
-                margin-right: 8%;
+                margin-right: 15%;
                 border-radius: 10px;
                 height: 20px;
-                width: 100%;
+                /*width: 100%;*/
             }
         </style>
     </head>
@@ -127,21 +127,56 @@ and open the template in the editor.
                             <label id="Tstatus_Label" for="Tstatus">
                                 حالة المنتج:
                             </label></br>
-                            <input type="text" id="Tstatus" name="Tstatus"></br></br>
+
+                            <input type="radio" id="Tstatus1" name="Tstatus" value="new">
+                            <label for="Tstatus1">جديد</label><br>
+                            
+                            <input type="radio" id="Tstatus2" name="Tstatus" value="used">
+                            <label for="Tstatus2">مستخدم</label></br></br>
+                            
                         </div>
                     
                         <div id="tool_price">
                             <label id="Tprice_Label" for="Tprice">
                                 سعر المنتج:
                             </label></br>
-                            <input type="text" id="Tprice" name="Tprice"></br></br>
+                            
+                            <input type="radio" id="Tprice1" name="Tprice" value="free">
+                            <label for="Tprice1">مجاناً</label><br>
+
+                            <input type="radio" id="Tprice2" name="Tprice" value="price" onclick="EnableTextBox()">
+                            <label for="Tprice1">مبلغ</label><br>
+                            <input style="margin-right: 25%;" type="text" id="TcustomPrice" name="Tprice" disabled="true"><br></br>
+                            <script>
+                                function EnableTextBox() {
+                                    var hasPrice = document.getElementById("Tprice2");
+                                    var CustomPrice = document.getElementById("TcustomPrice");
+                                    CustomPrice.disabled = hasPrice.checked ? false : true;
+                                    if (!CustomPrice.disabled) {
+                                        CustomPrice.focus();
+                                    }
+                                }
+                            </script>
+
+
                         </div>
                     
                         <div id="tool_city">
                             <label id="Tcity_Label" for="Tcity">
                                 مدينة البائع:
                             </label></br>
-                            <input type="text" id="Tcity" name="Tcity"></br></br>
+                            <input type="text" id="Tcity" name="Tcity">
+                        
+                            <!--<select>
+                                                    <option>اختر مدينتك</option>
+                                                    <option>جدة</option>
+                                                    <option>الرياض</option>
+                                                    <option>مكة</option>
+                                                    <option>ابها</option>
+                                                    <option>تبوك</option>
+                                                </select>-->
+
+                            </br></br>
                         </div>
                     </div>
 
