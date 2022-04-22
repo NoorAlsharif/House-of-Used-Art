@@ -15,6 +15,20 @@ and open the template in the editor.
         <link rel="stylesheet" href="headerStyle.css">
         <link rel="stylesheet" href="footerStyle.css">
         
+
+        <style>
+            label{
+                padding-right: 3%; 
+                font-size: 18px;
+                width: 100%;
+            }
+            div input{
+                margin-right: 8%;
+                border-radius: 10px;
+                height: 20px;
+                width: 100%;
+            }
+        </style>
     </head>
     
     
@@ -92,6 +106,90 @@ and open the template in the editor.
 
         </section>
         
+
+        <section id="form_content" style="direction: rtl;">
+            
+            <h3 style="font-size: 35px; padding-top: 2%; padding-right: 5%;">اضافة ادوات</h3>
+            <h4 style="padding-right: 5%;">اعرض ادواتك للبيع من خلال الموقع</h4>
+            
+            <div id="tool_info_form" style="padding-top: 3%; display:block; width: 100%; padding: 1%; padding-top: 3%;">
+                <form action="/AddTool_action_page.php">
+                    
+                    <div id="RightSide" style="display: inline-table; width: 50%; border-left: 1px solid;">
+                        <div id="tool_name">
+                            <label id="Tname_Label" for="Tname">
+                                اسم الاداة:
+                            </label></br>
+                            <input type="text" id="Tname" name="Tname"></br></br>
+                        </div>
+                    
+                        <div id="tool_status">
+                            <label id="Tstatus_Label" for="Tstatus">
+                                حالة المنتج:
+                            </label></br>
+                            <input type="text" id="Tstatus" name="Tstatus"></br></br>
+                        </div>
+                    
+                        <div id="tool_price">
+                            <label id="Tprice_Label" for="Tprice">
+                                سعر المنتج:
+                            </label></br>
+                            <input type="text" id="Tprice" name="Tprice"></br></br>
+                        </div>
+                    
+                        <div id="tool_city">
+                            <label id="Tcity_Label" for="Tcity">
+                                مدينة البائع:
+                            </label></br>
+                            <input type="text" id="Tcity" name="Tcity"></br></br>
+                        </div>
+                    </div>
+
+                    <div id="leftSide" style="display: inline-table; width: 30%; margin-right: 5%;">
+                        <div id="tool_section">
+                            <label id="Tsection_Label" for="Tsection">
+                                قسم المنتج:
+                            </label></br>
+                            <input type="text" id="Tsection" name="Tsection"></br></br>
+                        </div>
+                    
+                        <div id="tool_type">
+                            <label id="Ttype_Label" for="Ttype">
+                                نوع المنتج:
+                            </label></br>
+                            <input type="text" id="Ttype" name="Ttype"></br></br>
+                        </div>
+                    </div>
+
+                    <div id="bottom" style="">
+                        <br>
+                        <div id="tool_type">
+                            <label id="Ttype_Label" for="Ttype">
+                                المزيد من المعلومات:
+                            </label></br>
+                            <input type="text" id="Ttype" name="Ttype"></br></br>
+                        </div>
+
+                        <div id="tool_type">
+                            <label id="Ttype_Label" for="Ttype">
+                                المزيد من المعلومات:
+                            </label></br>
+                            <input type="text" id="Ttype" name="Ttype"></br></br>
+                        </div>
+
+                        <div id="tool_type">
+                            <label id="Ttype_Label" for="Ttype">
+                                المزيد من المعلومات:
+                            </label></br>
+                            <input type="text" id="Ttype" name="Ttype"></br></br>
+                        </div>
+
+                    </div>
+
+                </form>
+            </div>
+
+        </section>
         
         
         <footer class="section-p1">
@@ -129,10 +227,7 @@ and open the template in the editor.
 
             <div class="copyright">@2021 all copyright are reserved</div>
         </footer>
-
-        
-        <script src="script.js"></script>
-
-        </div>
+    </div>
+    <script src="script.js"></script>
     </body>
 </html>

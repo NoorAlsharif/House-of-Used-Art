@@ -8,19 +8,15 @@
         <title>أقسامنا</title>
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
         <link rel="stylesheet" href="style.css">
-
-
+        <link rel="stylesheet" href="headerStyle.css">
+        <link rel="stylesheet" href="footerStyle.css">
 
     </head>
 
     <body>
 
         <section id="header">
-
-
-
-            <div>
-
+            <div style="width: 100%;">
                 <ul id="navbar">
                     <li> <div class="fas fa-user" id="login-btn"></div></li>
                     <li>  <div class="fas fa-search" id="search-btn"></div></li>
@@ -28,13 +24,13 @@
                     <li><a href="offer.html">اعرض ادواتك</a></li>
                     <li><a href="used-tool.html">ادوات مستخدمة</a></li>
                     <li><a href="new-tool.html">ادوات جديدة</a></li>
-                    <li><a href="free-tool.html">ادوات مجانية</a></li>
+                    <li><a class="active" href="free.html">ادوات مجانية</a></li>
                     <li><a href="sections.html">جميع الاقسام</a></li>
-                    <li><a class="active" href="index.html"> الصفحة الرئيسية</a></li>
-
+                    <li><a href="index.html"> الصفحة الرئيسية</a></li>
+                    <li><img src="img/logo full image.png" style= "width: 280px; margin-left: 10%;"></li>
                 </ul>
-
             </div>
+            
             <a href="#"><img src="img/" class="logo" alt=""></a> 
 
 
@@ -50,10 +46,42 @@
                 <input type="email" placeholder="بريدك الالكتروني" class="box">
                 <input type="password" placeholder="كلمة السر " class="box">
                 <p>نسيت كلمة السر<a href="#">اضغط هنا</a></p>
-                <p>ليس لديك حساب<a href="#"> انشاء حساب</a></p>
-                <input type="submit" value="تسجيل الدخول" class="btn">
+                <p>ليس لديك حساب<a href="#"   onclick="document.getElementById('id01').style.display = 'block'"> انشاء حساب</a></p>
+                <input type="submit" value="تسجيل الدخول" class="btn"  >
             </form>
 
+
+
+            <div id="id01" class="modal">
+                <span onclick="document.getElementById('id01').style.display = 'none'" class="close" title="Close Modal">&times;</span>
+                <form class="modal-content" action="/action_page.php">
+                    <div class="container">
+                        <h1>تسجيل جديد</h1>
+                        <p>من فضلك قم بتعبئة الحقول لانشاء حساب</p>
+                        <hr>
+                        <label for="email"><b>البريد الالكتروني</b></label>
+                        <input type="text" placeholder="ادخل البريد الالكتروني" name="email" required>
+
+                        <label for="psw"><b>كلمة السر</b></label>
+                        <input type="password" placeholder="ادخل كلمة السر" name="psw" required>
+
+                        <label for="psw-repeat"><b>اعادة كتابة كلمة السر</b></label>
+                        <input type="password" placeholder="اعد كتابة كلمة السر" name="psw-repeat" required>
+
+                        <label>
+                            <input type="checkbox" checked="checked" name="remeberme" style="margin-bottom:15px"> تذكرني
+                        </label>
+
+                        <p>بأنشائك حساب انت توافق على السياسات والخصوصية<a href="#" style="color:dodgerblue">السياسات والخصوصية</a>.</p>
+
+                        <div class="clearfix">
+
+                            <button type="submit" class="signupbtn">انشاء حساب</button>
+                            <button type="button" onclick="document.getElementById('id01').style.display = 'none'" class="cancelbtn">الغاء</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
 
         </section>
 
