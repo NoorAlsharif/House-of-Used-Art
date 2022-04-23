@@ -25,7 +25,7 @@ and open the template in the editor.
             div input{
                 margin-right: 15%;
                 border-radius: 10px;
-                height: 20px;
+                height: 40px;
                 /*width: 100%;*/
             }
         </style>
@@ -112,7 +112,7 @@ and open the template in the editor.
             <h3 style="font-size: 35px; padding-top: 2%; padding-right: 5%;">اضافة ادوات</h3>
             <h4 style="padding-right: 5%;">اعرض ادواتك للبيع من خلال الموقع</h4>
             
-            <div id="tool_info_form" style="padding-top: 3%; display:block; width: 100%; padding: 1%; padding-top: 3%;">
+            <div id="tool_info_form" style="margin-top: 5%; display:block; width: 100%; padding: 1%; padding-right: 10%;">
                 <form action="/AddTool_action_page.php">
                     
                     <div id="RightSide" style="display: inline-table; width: 50%; border-left: 1px solid;">
@@ -120,7 +120,7 @@ and open the template in the editor.
                             <label id="Tname_Label" for="Tname">
                                 اسم الاداة:
                             </label></br>
-                            <input type="text" id="Tname" name="Tname"></br></br>
+                            <input style="width: 300px;" type="text" id="Tname" name="Tname"></br></br>
                         </div>
                     
                         <div id="tool_status">
@@ -196,25 +196,28 @@ and open the template in the editor.
                         </div>
                     </div>
 
-                    <div id="bottom" style="">
+                    <div id="bottom" style="margin-right: -2%;">
                         <br>
+                        <div id="tool_moreinfo">
+                            <label id="Tminfo_Label" for="Tminfo">
+                                المزيد من المعلومات:
+                            </label></br>
+                            <textarea style="resize:none; margin-right: 10%;" name="Tminfo" cols="40" rows="2"></textarea></br></br>
+                        
+                            </br></br>
+
+                        </div>
+
                         <div id="tool_type">
                             <label id="Ttype_Label" for="Ttype">
-                                المزيد من المعلومات:
+                                اضافة صور:
                             </label></br>
                             <input type="text" id="Ttype" name="Ttype"></br></br>
                         </div>
 
                         <div id="tool_type">
                             <label id="Ttype_Label" for="Ttype">
-                                المزيد من المعلومات:
-                            </label></br>
-                            <input type="text" id="Ttype" name="Ttype"></br></br>
-                        </div>
-
-                        <div id="tool_type">
-                            <label id="Ttype_Label" for="Ttype">
-                                المزيد من المعلومات:
+                                اضافة فيديو:
                             </label></br>
                             <input type="text" id="Ttype" name="Ttype"></br></br>
                         </div>
