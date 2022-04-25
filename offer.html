@@ -113,7 +113,7 @@ and open the template in the editor.
             <h4 style="padding-right: 5%;">اعرض ادواتك للبيع من خلال الموقع</h4>
             
             <div id="tool_info_form" style="margin-top: 5%; display:block; width: 100%; padding: 1%; padding-right: 10%;">
-                <form action="/AddTool_action_page.php">
+                <form action="/AddTool_actionPage.php" method= POST>
                     
                     <div id="RightSide" style="display: inline-table; width: 50%; border-left: 1px solid;">
                         <div id="tool_name">
@@ -141,17 +141,22 @@ and open the template in the editor.
                                 سعر المنتج:
                             </label></br>
                             
-                            <input type="radio" id="Tprice1" name="Tprice" value="free">
+                            <input type="radio" id="Tprice1" name="Tprice" value="free" onclick="EnableTextBox()">
                             <label for="Tprice1">مجاناً</label><br>
 
                             <input type="radio" id="Tprice2" name="Tprice" value="price" onclick="EnableTextBox()">
                             <label for="Tprice1">مبلغ</label><br>
+
                             <input style="margin-right: 25%;" type="text" id="TcustomPrice" name="Tprice" disabled="true"><br></br>
+
                             <script>
                                 function EnableTextBox() {
                                     var hasPrice = document.getElementById("Tprice2");
+                                    
                                     var CustomPrice = document.getElementById("TcustomPrice");
+
                                     CustomPrice.disabled = hasPrice.checked ? false : true;
+                                    
                                     if (!CustomPrice.disabled) {
                                         CustomPrice.focus();
                                     }
@@ -165,17 +170,32 @@ and open the template in the editor.
                             <label id="Tcity_Label" for="Tcity">
                                 مدينة البائع:
                             </label></br>
-                            <input type="text" id="Tcity" name="Tcity">
-                        
-                            <!--<select>
-                                                    <option>اختر مدينتك</option>
-                                                    <option>جدة</option>
-                                                    <option>الرياض</option>
-                                                    <option>مكة</option>
-                                                    <option>ابها</option>
-                                                    <option>تبوك</option>
-                                                </select>-->
+                            
+                            <style>
+                                #Tcity {
+                                    background-color: #f1f1f1;
+                                    color: black;
+                                     
+                                    font-size: 18px;
+                                    margin-right: 15%;
+                                    border-radius: 10px;
 
+                                    height: 40px;
+                                    width: 200px;
+                                    border: none;
+                                }
+                            </style>
+
+                            <div class="dropdown">
+                                <select id="Tcity" name="Tcity">
+                                    <option value="choose">اختر مدينتك</option>
+                                    <option value="jeddah">جدة</option>
+                                    <option value="riyadh">الرياض</option>
+                                    <option value="macca">مكة</option>
+                                    <option value="abha">ابها</option>
+                                    <option value="tabook">تبوك</option>
+                                </select>
+                            </div>
                             </br></br>
                         </div>
                     </div>
@@ -185,14 +205,34 @@ and open the template in the editor.
                             <label id="Tsection_Label" for="Tsection">
                                 قسم المنتج:
                             </label></br>
-                            <input type="text" id="Tsection" name="Tsection"></br></br>
+
+                            <input type="checkbox" id="Tsection1" name="Tsection">
+                            <label id="Tsection_label" for="Tsection1">رسم</label></br>
+                            <input type="checkbox" id="Tsection2" name="Tsection">
+                            <label id="Tsection_label" for="Tsection2">رسم</label></br>
+                            <input type="checkbox" id="Tsection3" name="Tsection">
+                            <label id="Tsection_label" for="Tsection3">رسم</label></br>
+                            <input type="checkbox" id="Tsection4" name="Tsection">
+                            <label id="Tsection_label" for="Tsection4">رسم</label></br>
+                        
+                        </br></br>
                         </div>
                     
                         <div id="tool_type">
                             <label id="Ttype_Label" for="Ttype">
                                 نوع المنتج:
                             </label></br>
-                            <input type="text" id="Ttype" name="Ttype"></br></br>
+                            
+                            <input type="checkbox" id="Ttype1" name="Ttype">
+                            <label id="Tsection_label" for="Ttype1">رسم</label></br>
+                            <input type="checkbox" id="Ttype2" name="Ttype">
+                            <label id="Tsection_label" for="Ttype2">رسم</label></br>
+                            <input type="checkbox" id="Ttype3" name="Ttype">
+                            <label id="Tsection_label" for="Ttype3">رسم</label></br>
+                            <input type="checkbox" id="Ttype4" name="Ttype">
+                            <label id="Tsection_label" for="Ttype4">رسم</label></br>
+                        
+                        </br></br>
                         </div>
                     </div>
 
@@ -208,21 +248,46 @@ and open the template in the editor.
 
                         </div>
 
-                        <div id="tool_type">
-                            <label id="Ttype_Label" for="Ttype">
+                        <div id="tool_pics">
+                            <label id="Tpics_Label" for="Tpics">
                                 اضافة صور:
                             </label></br>
-                            <input type="text" id="Ttype" name="Ttype"></br></br>
+                            <input type="file" multiple id="Tpics" name="Tpics"></br></br>
                         </div>
 
-                        <div id="tool_type">
-                            <label id="Ttype_Label" for="Ttype">
+                        <div id="tool_vid">
+                            <label id="Tvid_Label" for="Tvid">
                                 اضافة فيديو:
                             </label></br>
-                            <input type="text" id="Ttype" name="Ttype"></br></br>
+                            <input type="file" id="Tvid" name="Tvid"></br></br>
                         </div>
 
                     </div>
+
+                    <div id="doneBTN">
+                        <button id="submitbtn">اضافة</button>
+                        
+                    </div>
+                    <style>
+                        #doneBTN{
+                            text-align: center;
+                            margin-right: -10%;
+                        }
+                        #submitbtn{
+                            background-color: #088178;
+                            color: white;
+                            text-align: center;
+                            font-size: 18px;
+                            height: 40px;
+                            width: 200px;
+                            border-radius: 10px;
+                            border: 1px solid #cce7d0;
+                        }
+                        #submitbtn:hover{
+                            background-color: #cce7d0;
+                            color: black;
+                        }
+                    </style>
 
                 </form>
             </div>
