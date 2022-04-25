@@ -90,7 +90,7 @@ and open the template in the editor.
                         <input type="password" placeholder="اعد كتابة كلمة السر" name="psw-repeat" required>
 
                         <label>
-                            <input type="checkbox" checked="checked" name="remeberme" style="margin-bottom:15px"> تذكرني
+                            <input type="radio" checked="checked" name="remeberme" style="margin-bottom:15px"> تذكرني
                         </label>
 
                         <p>بأنشائك حساب انت توافق على السياسات والخصوصية<a href="#" style="color:dodgerblue">السياسات والخصوصية</a>.</p>
@@ -116,11 +116,12 @@ and open the template in the editor.
                 <form action="/AddTool_actionPage.php" method= POST>
                     
                     <div id="RightSide" style="display: inline-table; width: 50%; border-left: 1px solid;">
+                        
                         <div id="tool_name">
                             <label id="Tname_Label" for="Tname">
                                 اسم الاداة:
                             </label></br>
-                            <input style="width: 300px;" type="text" id="Tname" name="Tname"></br></br>
+                            <input style="width: 300px;" type="text" id="Tname" name="Tname" required></br></br>
                         </div>
                     
                         <div id="tool_status">
@@ -128,10 +129,10 @@ and open the template in the editor.
                                 حالة المنتج:
                             </label></br>
 
-                            <input type="radio" id="Tstatus1" name="Tstatus" value="new">
-                            <label for="Tstatus1">جديد</label><br>
+                            <input type="radio" id="Tstatus1" name="Tstatus" value="new" required>
+                            <label for="Tstatus1">جديد</label>
                             
-                            <input type="radio" id="Tstatus2" name="Tstatus" value="used">
+                            <input type="radio" id="Tstatus2" name="Tstatus" value="used" >
                             <label for="Tstatus2">مستخدم</label></br></br>
                             
                         </div>
@@ -141,13 +142,13 @@ and open the template in the editor.
                                 سعر المنتج:
                             </label></br>
                             
-                            <input type="radio" id="Tprice1" name="Tprice" value="free" onclick="EnableTextBox()">
+                            <input type="radio" id="Tprice1" name="Tprice" value="free" onclick="EnableTextBox()" required>
                             <label for="Tprice1">مجاناً</label><br>
 
-                            <input type="radio" id="Tprice2" name="Tprice" value="price" onclick="EnableTextBox()">
+                            <input type="radio" id="Tprice2" name="Tprice" value="price" onclick="EnableTextBox()" >
                             <label for="Tprice1">مبلغ</label><br>
 
-                            <input style="margin-right: 25%;" type="text" id="TcustomPrice" name="Tprice" disabled="true"><br></br>
+                            <input style="margin-right: 25%;" type="text" id="TcustomPrice" name="Tprice" hidden="true" required><br></br>
 
                             <script>
                                 function EnableTextBox() {
@@ -155,7 +156,7 @@ and open the template in the editor.
                                     
                                     var CustomPrice = document.getElementById("TcustomPrice");
 
-                                    CustomPrice.disabled = hasPrice.checked ? false : true;
+                                    CustomPrice.hidden = hasPrice.checked ? false : true;
                                     
                                     if (!CustomPrice.disabled) {
                                         CustomPrice.focus();
@@ -187,8 +188,8 @@ and open the template in the editor.
                             </style>
 
                             <div class="dropdown">
-                                <select id="Tcity" name="Tcity">
-                                    <option value="choose">اختر مدينتك</option>
+                                <select id="Tcity" name="Tcity" required>
+                                    <option value="" disabled selected>اختر مدينتك</option>
                                     <option value="jeddah">جدة</option>
                                     <option value="riyadh">الرياض</option>
                                     <option value="macca">مكة</option>
@@ -198,6 +199,52 @@ and open the template in the editor.
                             </div>
                             </br></br>
                         </div>
+                        
+                        <div id="tool_contact">
+                            <label id="Tcontact_Label" for="Tcontact">
+                                طريقة التواصل:
+                            </label></br>
+                            
+                            <input type="radio" id="Tcontact1" name="Tcontact" value="email" onclick="ContactTextBox()" required>
+                            <label for="Tcontact1">بريد الكتروني</label><br>
+
+                            <input style="margin-right: 25%; width: 400px;" type="email" id="Temail" name="Tcontact" placeholder="YourEmail@email.com" hidden="true" required><br><br>
+
+                            <input type="radio" id="Tcontact2" name="Tcontact" value="phone" onclick="ContactTextBox()">
+                            <label for="Tprice1">جوال</label><br>
+
+                            <input style="margin-right: 25%; width: 400px;" type="tel" id="Tphone" name="Tcontact" placeholder="55-5555-555" pattern="[0-5]{2}-[0-9]{4}-[0-9]{3}" hidden="true" required>
+                            <br></br>
+
+                            <script>
+                                function ContactTextBox() {
+                                    var byEmail = document.getElementById("Tcontact1");
+                                    var byPhone = document.getElementById("Tcontact2");
+                                    
+                                    var email = document.getElementById("Temail");
+                                    var phone = document.getElementById("Tphone");
+
+                                    //email.disabled = byEmail.checked ? false : true;
+
+                                    if(byEmail.checked){
+                                        //phone.disabled;
+                                        email.hidden=false;
+                                        email.focus();
+                                    }else{
+                                        email.hidden=true;
+                                    }
+                                    
+                                    if(byPhone.checked){
+                                        phone.hidden=false;
+                                        phone.focus();
+                                    }else{
+                                        phone.hidden=true;
+                                    }
+                                    
+                                }
+                            </script>
+                        
+                        </div>
                     </div>
 
                     <div id="leftSide" style="display: inline-table; width: 30%; margin-right: 5%;">
@@ -206,30 +253,30 @@ and open the template in the editor.
                                 قسم المنتج:
                             </label></br>
 
-                            <input type="checkbox" id="Tsection1" name="Tsection">
+                            <input type="radio" id="Tsection1" name="Tsection" required>
                             <label id="Tsection_label" for="Tsection1">رسم</label></br>
-                            <input type="checkbox" id="Tsection2" name="Tsection">
+                            <input type="radio" id="Tsection2" name="Tsection" >
                             <label id="Tsection_label" for="Tsection2">رسم</label></br>
-                            <input type="checkbox" id="Tsection3" name="Tsection">
+                            <input type="radio" id="Tsection3" name="Tsection" >
                             <label id="Tsection_label" for="Tsection3">رسم</label></br>
-                            <input type="checkbox" id="Tsection4" name="Tsection">
+                            <input type="radio" id="Tsection4" name="Tsection" >
                             <label id="Tsection_label" for="Tsection4">رسم</label></br>
                         
                         </br></br>
                         </div>
                     
-                        <div id="tool_type">
+                        <div id="tool_type" >
                             <label id="Ttype_Label" for="Ttype">
                                 نوع المنتج:
                             </label></br>
                             
-                            <input type="checkbox" id="Ttype1" name="Ttype">
+                            <input type="radio" id="Ttype1" name="Ttype" required>
                             <label id="Tsection_label" for="Ttype1">رسم</label></br>
-                            <input type="checkbox" id="Ttype2" name="Ttype">
+                            <input type="radio" id="Ttype2" name="Ttype" >
                             <label id="Tsection_label" for="Ttype2">رسم</label></br>
-                            <input type="checkbox" id="Ttype3" name="Ttype">
+                            <input type="radio" id="Ttype3" name="Ttype" >
                             <label id="Tsection_label" for="Ttype3">رسم</label></br>
-                            <input type="checkbox" id="Ttype4" name="Ttype">
+                            <input type="radio" id="Ttype4" name="Ttype" >
                             <label id="Tsection_label" for="Ttype4">رسم</label></br>
                         
                         </br></br>
@@ -242,45 +289,48 @@ and open the template in the editor.
                             <label id="Tminfo_Label" for="Tminfo">
                                 المزيد من المعلومات:
                             </label></br>
-                            <textarea style="resize:none; margin-right: 10%;" name="Tminfo" cols="40" rows="2"></textarea></br></br>
-                        
+                            <textarea style="resize:none; margin-right: 10%;" id="Tminfo" name="Tminfo" cols="40" rows="2" placeholder="اضف المزيد من المعلومات عن المنتج..." required>
+                            </textarea>
                             </br></br>
-
+                            </br></br>
                         </div>
 
                         <div id="tool_pics">
                             <label id="Tpics_Label" for="Tpics">
                                 اضافة صور:
                             </label></br>
-                            <input type="file" multiple id="Tpics" name="Tpics"></br></br>
+                            <input type="file" multiple id="Tpics" name="Tpics" required></br></br>
                         </div>
 
                         <div id="tool_vid">
                             <label id="Tvid_Label" for="Tvid">
                                 اضافة فيديو:
                             </label></br>
-                            <input type="file" id="Tvid" name="Tvid"></br></br>
+                            <input type="file" id="Tvid" name="Tvid" ></br></br>
                         </div>
 
                     </div>
 
                     <div id="doneBTN">
-                        <button id="submitbtn">اضافة</button>
-                        
+                        <input type="submit" id="submitbtn" value="اضافة"> </input>
                     </div>
+
                     <style>
                         #doneBTN{
                             text-align: center;
                             margin-right: -10%;
+                            padding: 5%;
                         }
                         #submitbtn{
                             background-color: #088178;
                             color: white;
                             text-align: center;
-                            font-size: 18px;
-                            height: 40px;
+                            font-size: 23px;
+                            height: 50px;
                             width: 200px;
-                            border-radius: 10px;
+                            margin-right: auto;
+                            border-radius: 20px;
+                            padding: 3px;
                             border: 1px solid #cce7d0;
                         }
                         #submitbtn:hover{
