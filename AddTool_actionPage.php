@@ -12,6 +12,7 @@
 		// username => root
 		// password => empty
 		// database name => HUA_store
+		// table name => AddTools
 		$conn = mysqli_connect("localhost", "root", "", "HUA_store");
 		
 		// Check connection
@@ -25,6 +26,7 @@
 		$Tool_status = $_REQUEST['Tstatus'];
 		$Tool_price = $_REQUEST['Tprice'];
         $Tool_city = $_REQUEST['Tcity'];
+		$Tool_contact = $_REQUEST['Tcontact'];
 
 		$Tool_section = $_REQUEST['Tsection'];
         $Tool_type = $_REQUEST['Ttype'];
