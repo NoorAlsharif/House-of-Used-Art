@@ -121,7 +121,7 @@ and open the template in the editor.
                             <label id="Tname_Label" for="Tname">
                                 اسم الاداة:
                             </label></br>
-                            <input style="width: 300px;" type="text" id="Tname" name="Tname" required></br></br>
+                            <input style="width: 300px;" type="text" id="Tname" name="Tname" required title="يجب كتابة اسم للمنتج"></br></br>
                         </div>
                     
                         <div id="tool_status">
@@ -148,7 +148,7 @@ and open the template in the editor.
                             <input type="radio" id="Tprice2" name="Tprice" value="price" onclick="EnableTextBox()" >
                             <label for="Tprice1">مبلغ</label><br>
 
-                            <input style="margin-right: 25%;" type="text" id="TcustomPrice" name="Tprice" hidden="true" required><br></br>
+                            <input style="margin-right: 25%;" type="number" min="1" max="100,000" id="TcustomPrice" name="Tprice" hidden="true" required><br></br>
 
                             <script>
                                 function EnableTextBox() {
@@ -173,13 +173,16 @@ and open the template in the editor.
                             </label></br>
                             
                             <style>
-                                #Tcity {
+                                .dropdown {
                                     background-color: #f1f1f1;
                                     color: black;
                                      
                                     font-size: 18px;
+                                    margin-top: 3%;
                                     margin-right: 15%;
                                     border-radius: 10px;
+
+                                    padding-right: 5%;
 
                                     height: 40px;
                                     width: 200px;
@@ -187,8 +190,8 @@ and open the template in the editor.
                                 }
                             </style>
 
-                            <div class="dropdown">
-                                <select id="Tcity" name="Tcity" required>
+                            <div class="dropdownMenu">
+                                <select class="dropdown" id="Tcity" name="Tcity" required>
                                     <option value="" disabled selected>اختر مدينتك</option>
                                     <option value="jeddah">جدة</option>
                                     <option value="riyadh">الرياض</option>
@@ -253,34 +256,80 @@ and open the template in the editor.
                                 قسم المنتج:
                             </label></br>
 
-                            <input type="radio" id="Tsection1" name="Tsection" required>
-                            <label id="Tsection_label" for="Tsection1">رسم</label></br>
-                            <input type="radio" id="Tsection2" name="Tsection" >
-                            <label id="Tsection_label" for="Tsection2">رسم</label></br>
-                            <input type="radio" id="Tsection3" name="Tsection" >
-                            <label id="Tsection_label" for="Tsection3">رسم</label></br>
-                            <input type="radio" id="Tsection4" name="Tsection" >
-                            <label id="Tsection_label" for="Tsection4">رسم</label></br>
-                        
-                        </br></br>
+                            <div class="dropdownMenu">
+                                <select class="dropdown" id="Tsection" name="Tsection" onchange="changingList()" required>
+                                    <option value="" disabled selected>اختر قسم المنتج</option>
+                                    <option value="sewing">الحياكة والتطريز</option>
+                                    <option value="canvas">اللوحات</option>
+                                    <option value="glass">الخزف والزجاج</option>
+                                    <option value="other">غير ذالك</option>
+                                </select>
+                            </div>
                         </div>
+
+                    </br></br>
                     
                         <div id="tool_type" >
                             <label id="Ttype_Label" for="Ttype">
                                 نوع المنتج:
                             </label></br>
                             
-                            <input type="radio" id="Ttype1" name="Ttype" required>
-                            <label id="Tsection_label" for="Ttype1">رسم</label></br>
-                            <input type="radio" id="Ttype2" name="Ttype" >
-                            <label id="Tsection_label" for="Ttype2">رسم</label></br>
-                            <input type="radio" id="Ttype3" name="Ttype" >
-                            <label id="Tsection_label" for="Ttype3">رسم</label></br>
-                            <input type="radio" id="Ttype4" name="Ttype" >
-                            <label id="Tsection_label" for="Ttype4">رسم</label></br>
-                        
-                        </br></br>
+                            <div class="dropdownMenu">
+                                <select class="dropdown" id="Ttype" name="Ttype" required>
+                                    <option value="" disabled selected>اختر نوع المنتج</option>
+                                </select>
+                            </div>
+
+                            <script>
+                                var tools = {};
+                                tools['sewing'] = [
+                                    'ابر',
+                                    'خيوط',
+                                    'اقمشة',
+                                    'طارة',
+                                    'آخر'];
+
+                                tools['canvas'] = [
+                                    'فرش',
+                                    'مزيل الوان',
+                                    'الوان',
+                                    'لوحة الوان',
+                                    'آخر'];
+
+                                tools['glass'] = [
+                                    'ادوات نحت',
+                                    'صحن دوار',
+                                    'قوالب تشكيل',
+                                    'اخر'];
+
+                                function changingList() {
+                                    var section = document.getElementById("Tsection");
+                                    var type = document.getElementById("Ttype");
+
+                                    var toolTypes = section.options[section.selectedIndex].value;
+
+                                    //type.options.length = 1;
+
+                                    while (type.options.length) {
+                                        type.remove(0);
+                                    }
+                                    var addTool = tools[toolTypes];
+
+                                    type.options.add(new Option('اختر نوع المنتج'));
+                                    type.options[0].disabled = true;
+
+                                    if (addTool) {
+                                        var i;
+
+                                        for (i = 0; i < addTool.length; i++) {
+                                            var newTool = new Option(addTool[i], i);
+                                            type.options.add(newTool);
+                                        }
+                                    }
+                                }
+                            </script>
                         </div>
+                    </br></br>
                     </div>
 
                     <div id="bottom" style="margin-right: -2%;">
@@ -289,8 +338,7 @@ and open the template in the editor.
                             <label id="Tminfo_Label" for="Tminfo">
                                 المزيد من المعلومات:
                             </label></br>
-                            <textarea style="resize:none; margin-right: 10%;" id="Tminfo" name="Tminfo" cols="40" rows="2" placeholder="اضف المزيد من المعلومات عن المنتج..." required>
-                            </textarea>
+                            <textarea style="resize:none; margin-right: 10%;" id="Tminfo" name="Tminfo" cols="40" rows="2" placeholder="اضف المزيد من المعلومات عن المنتج..." required></textarea>
                             </br></br>
                             </br></br>
                         </div>
