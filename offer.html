@@ -5,42 +5,48 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Add tools</title>
-        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="headerStyle.css">
-        <link rel="stylesheet" href="footerStyle.css">
-        
 
-        <style>
-            label{
-                padding-right: 3%; 
-                font-size: 18px;
-                /*width: 100%;*/
-            }
-            div input{
-                margin-right: 15%;
-                border-radius: 10px;
-                height: 40px;
-                /*width: 100%;*/
-            }
-        </style>
-    </head>
-    
-    
-    <body>
-        
-        <div class="rainbow-box">
-        
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add tools</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="headerStyle.css">
+    <link rel="stylesheet" href="footerStyle.css">
+
+
+    <style>
+        label {
+            padding-right: 3%;
+            font-size: 18px;
+            /*width: 100%;*/
+        }
+
+        div input {
+            margin-right: 15%;
+            border-radius: 10px;
+            height: 40px;
+            /*width: 100%;*/
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <div class="rainbow-box">
+
         <section id="header">
             <div style="width: 100%;">
                 <ul id="navbar">
-                    <li> <div class="fas fa-user" id="login-btn"></div></li>
-                    <li>  <div class="fas fa-search" id="search-btn"></div></li>
+                    <li>
+                        <div class="fas fa-user" id="login-btn"></div>
+                    </li>
+                    <li>
+                        <div class="fas fa-search" id="search-btn"></div>
+                    </li>
                     <li></li>
                     <li><a class="active" href="offer.html">اعرض ادواتك</a></li>
                     <li><a href="used-tool.html">ادوات مستخدمة</a></li>
@@ -48,11 +54,11 @@ and open the template in the editor.
                     <li><a href="free.html">ادوات مجانية</a></li>
                     <li><a href="sections.html">جميع الاقسام</a></li>
                     <li><a href="index.html"> الصفحة الرئيسية</a></li>
-                    <li><img src="img/logo full image.png" style= "width: 280px; margin-left: 10%;"></li>
+                    <li><img src="img/logo full image.png" style="width: 280px; margin-left: 10%;"></li>
                 </ul>
             </div>
-            
-            <a href="#"><img src="img/" class="logo" alt=""></a> 
+
+            <a href="#"><img src="img/" class="logo" alt=""></a>
 
 
             <form action="" class="search-form">
@@ -61,20 +67,22 @@ and open the template in the editor.
                 <input type="search" id="search-box" placeholder=".......ابحث هنا">
             </form>
 
-            
+
             <form action="" class="login-form">
                 <h3>تسجيل الدخول</h3>
                 <input type="email" placeholder="بريدك الالكتروني" class="box">
                 <input type="password" placeholder="كلمة السر " class="box">
                 <p>نسيت كلمة السر<a href="#">اضغط هنا</a></p>
-                <p>ليس لديك حساب<a href="#"   onclick="document.getElementById('id01').style.display = 'block'"> انشاء حساب</a></p>
-                <input type="submit" value="تسجيل الدخول" class="btn"  >
+                <p>ليس لديك حساب<a href="#" onclick="document.getElementById('id01').style.display = 'block'"> انشاء
+                        حساب</a></p>
+                <input type="submit" value="تسجيل الدخول" class="btn">
             </form>
 
 
 
             <div id="id01" class="modal">
-                <span onclick="document.getElementById('id01').style.display = 'none'" class="close" title="Close Modal">&times;</span>
+                <span onclick="document.getElementById('id01').style.display = 'none'" class="close"
+                    title="Close Modal">&times;</span>
                 <form class="modal-content" action="/action_page.php">
                     <div class="container">
                         <h1>تسجيل جديد</h1>
@@ -93,37 +101,41 @@ and open the template in the editor.
                             <input type="radio" checked="checked" name="remeberme" style="margin-bottom:15px"> تذكرني
                         </label>
 
-                        <p>بأنشائك حساب انت توافق على السياسات والخصوصية<a href="#" style="color:dodgerblue">السياسات والخصوصية</a>.</p>
+                        <p>بأنشائك حساب انت توافق على السياسات والخصوصية<a href="#" style="color:dodgerblue">السياسات
+                                والخصوصية</a>.</p>
 
                         <div class="clearfix">
 
                             <button type="submit" class="signupbtn">انشاء حساب</button>
-                            <button type="button" onclick="document.getElementById('id01').style.display = 'none'" class="cancelbtn">الغاء</button>
+                            <button type="button" onclick="document.getElementById('id01').style.display = 'none'"
+                                class="cancelbtn">الغاء</button>
                         </div>
                     </div>
                 </form>
             </div>
 
         </section>
-        
 
-        <section id="form_content" style="direction: rtl;">
-            
-            <h3 style="font-size: 35px; padding-top: 2%; padding-right: 5%;">اضافة ادوات</h3>
-            <h4 style="padding-right: 5%;">اعرض ادواتك للبيع من خلال الموقع</h4>
-            
-            <div id="tool_info_form" style="margin-top: 5%; display:block; width: 100%; padding: 1%; padding-right: 10%;">
-                <form action="/AddTool_actionPage.php" method= POST>
-                    
+
+        <section id="form_content" style="direction: rtl; width: 90%; margin:5%;">
+
+            <h3 style="font-size: 37px; padding-top: 1px; padding-right: 2%;">اضافة ادوات</h3>
+            <h4 style="padding-right: 2%; padding-top: 2px;">اعرض ادواتك للبيع من خلال الموقع</h4>
+
+            <div id="tool_info_form"
+                style="margin-top: 5%; display:block; width: 100%; padding: 1%; padding-right: 10%;">
+                <form id="myform" action="/AddTool_actionPage.php" method=POST>
+
                     <div id="RightSide" style="display: inline-table; width: 50%; border-left: 1px solid;">
-                        
+
                         <div id="tool_name">
                             <label id="Tname_Label" for="Tname">
                                 اسم الاداة:
                             </label></br>
-                            <input style="width: 300px;" type="text" id="Tname" name="Tname" required title="يجب كتابة اسم للمنتج"></br></br>
+                            <input style="width: 300px;" type="text" id="Tname" name="Tname" required
+                                title="يجب كتابة اسم للمنتج"></br></br>
                         </div>
-                    
+
                         <div id="tool_status">
                             <label id="Tstatus_Label" for="Tstatus">
                                 حالة المنتج:
@@ -131,33 +143,35 @@ and open the template in the editor.
 
                             <input type="radio" id="Tstatus1" name="Tstatus" value="new" required>
                             <label for="Tstatus1">جديد</label>
-                            
-                            <input type="radio" id="Tstatus2" name="Tstatus" value="used" >
+
+                            <input type="radio" id="Tstatus2" name="Tstatus" value="used">
                             <label for="Tstatus2">مستخدم</label></br></br>
-                            
+
                         </div>
-                    
+
                         <div id="tool_price">
                             <label id="Tprice_Label" for="Tprice">
                                 سعر المنتج:
                             </label></br>
-                            
-                            <input type="radio" id="Tprice1" name="Tprice" value="free" onclick="EnableTextBox()" required>
+
+                            <input type="radio" id="Tprice1" name="Tprice" value="free" onclick="EnableTextBox()"
+                                required>
                             <label for="Tprice1">مجاناً</label><br>
 
-                            <input type="radio" id="Tprice2" name="Tprice" value="price" onclick="EnableTextBox()" >
+                            <input type="radio" id="Tprice2" name="Tprice" value="price" onclick="EnableTextBox()">
                             <label for="Tprice1">مبلغ</label><br>
 
-                            <input style="margin-right: 25%;" type="number" min="1" max="100,000" id="TcustomPrice" name="Tprice" hidden="true" required><br></br>
+                            <input style="margin-right: 25%;" type="number" min="1" max="100,000" id="TcustomPrice"
+                                name="Tprice" hidden="true" required><br></br>
 
                             <script>
                                 function EnableTextBox() {
                                     var hasPrice = document.getElementById("Tprice2");
-                                    
+
                                     var CustomPrice = document.getElementById("TcustomPrice");
 
                                     CustomPrice.hidden = hasPrice.checked ? false : true;
-                                    
+
                                     if (!CustomPrice.disabled) {
                                         CustomPrice.focus();
                                     }
@@ -166,17 +180,17 @@ and open the template in the editor.
 
 
                         </div>
-                    
+
                         <div id="tool_city">
                             <label id="Tcity_Label" for="Tcity">
                                 مدينة البائع:
                             </label></br>
-                            
+
                             <style>
                                 .dropdown {
                                     background-color: #f1f1f1;
                                     color: black;
-                                     
+
                                     font-size: 18px;
                                     margin-top: 3%;
                                     margin-right: 15%;
@@ -202,25 +216,29 @@ and open the template in the editor.
                             </div>
                             </br></br>
                         </div>
-                        
+
+                        <!--
                         <div id="tool_contact">
                             <label id="Tcontact_Label" for="Tcontact">
                                 طريقة التواصل:
                             </label></br>
                             <div id="checkBoxContact" required>
-                                <input type="checkbox" id="Tcontact1" name="Tcontact" value="email" onclick="ContactTextBox()">
+                                <input type="checkbox" id="Tcontact1" name="Tcontact" value="email"
+                                    onclick="ContactTextBox()">
                                 <label for="Tcontact1">بريد الكتروني</label><br>
-                            
+
                                 <input style="margin-right: 25%; width: 400px;" type="email" id="Temail" name="Tcontact"
                                     placeholder="YourEmail@email.com" hidden="true" required><br><br>
-                            
-                                <input type="checkbox" id="Tcontact2" name="Tcontact" value="phone" onclick="ContactTextBox()">
+
+                                <input type="checkbox" id="Tcontact2" name="Tcontact" value="phone"
+                                    onclick="ContactTextBox()">
                                 <label for="Tprice1">جوال</label><br>
-                            
-                                <input style="margin-right: 25%; width: 400px;" type="tel" id="Tphone" name="Tcontact" placeholder="55-5555-555"
-                                    pattern="[0-5]{2}-[0-9]{4}-[0-9]{3}" hidden="true" required>
+
+                                <input style="margin-right: 25%; width: 400px;" type="tel" id="Tphone" name="Tcontact"
+                                    placeholder="55-5555-555" pattern="[0-5]{2}-[0-9]{4}-[0-9]{3}" hidden="true"
+                                    required>
                                 <br></br>
-                            
+
                                 <script>
                                     function ContactTextBox() {
                                         var byEmail = document.getElementById("Tcontact1");
@@ -235,21 +253,21 @@ and open the template in the editor.
                                             //phone.disabled;
                                             email.hidden = false;
                                             email.focus();
-                                        }else{
+                                        } else {
                                             email.hidden = true;
                                         }
 
                                         if (byPhone.checked) {
                                             phone.hidden = false;
                                             phone.focus();
-                                        }else{
+                                        } else {
                                             phone.hidden = true;
                                         }
 
                                     }
                                 </script>
                             </div>
-                        </div>
+                        </div>-->
                     </div>
 
                     <div id="leftSide" style="display: inline-table; width: 30%; margin-right: 5%;">
@@ -259,7 +277,8 @@ and open the template in the editor.
                             </label></br>
 
                             <div class="dropdownMenu">
-                                <select class="dropdown" id="Tsection" name="Tsection" onchange="changingList(), addTextBox()" required>
+                                <select class="dropdown" id="Tsection" name="Tsection"
+                                    onchange="changingList(), addTextBox()" required>
                                     <option value="" disabled selected>اختر قسم المنتج</option>
                                     <option value="sewing">الحياكة والتطريز</option>
                                     <option value="canvas">اللوحات</option>
@@ -267,40 +286,21 @@ and open the template in the editor.
                                     <option value="other">غير ذالك</option>
                                 </select>
                             </div>
-                            <br>
-                            <input style="margin-right: 15%; width: 300px;" type="text" id="TsectionOther" name="TsectionOther" hidden="true" onchange="addTextBox()">
-                            </br>
-
-                            <script>
-                                function addTextBox(){
-                                    var otherChoice = document.getElementById("Tsection").selectedIndex;
-                                    if (otherChoice == 4) {
-                                        document.getElementById("TsectionOther").hidden=false;
-                                        
-                                    }else{
-                                        document.getElementById("TsectionOther").hidden=true;
-                                    }
-                                }
-
-                            </script>
                         </div>
 
-                    </br></br>
-                    
-                        <div id="tool_type" >
+                        </br></br>
+
+                        <div id="tool_type">
                             <label id="Ttype_Label" for="Ttype">
                                 نوع المنتج:
                             </label></br>
-                            
+
                             <div class="dropdownMenu">
                                 <select class="dropdown" id="Ttype" name="Ttype" onchange="OtherOption()" required>
                                     <option value="" disabled selected>اختر نوع المنتج</option>
                                 </select>
                             </div>
                             <br>
-                            <input style="margin-right: 15%; width: 300px;" type="text" id="TtypeOther" name="TtypeOther" hidden="false" onchange="OtherOption()">
-                            </br>
-
                             <script>
                                 var tools = {};
                                 tools['sewing'] = [
@@ -322,7 +322,7 @@ and open the template in the editor.
                                     'صحن دوار',
                                     'قوالب تشكيل',
                                     'اخر'];
-                                
+
                                 tools['other'] = [
                                     'ابر',
                                     'خيوط',
@@ -336,7 +336,7 @@ and open the template in the editor.
                                     'صحن دوار',
                                     'قوالب تشكيل',
                                     'آخر'
-                                    ]
+                                ]
 
                                 function changingList() {
                                     var section = document.getElementById("Tsection");
@@ -360,33 +360,74 @@ and open the template in the editor.
                                         for (i = 0; i < addTool.length; i++) {
                                             var newTool = new Option(addTool[i], i);
                                             type.options.add(newTool);
-                                            newTool.setAttribute("value","tool "+i);
+                                            newTool.setAttribute("value", "tool " + i);
                                             //console.log(newTool);
                                         }
                                     }
                                 }
-
-                                function OtherOption(){
-                                    //var otherChoice = document.getElementById("Ttype").selectedIndex;
-                                    var otherChoice = document.getElementById("Ttype");
-                                    var text = otherChoice.options.length -1;
-                                    
-                                    var str = "آخر";
-
-                                    var op = otherChoice.options[otherChoice.length-1];
-
-                                    var choice = otherChoice.selectedIndex(op);
-
-                                    if (choice = true) {
-                                        document.getElementById("TtypeOther").hidden=false;
-                                    }else{
-                                        document.getElementById("TtypeOther").hidden=true;
-                                    }
-
-                                }
                             </script>
+                            
+                            <br></br>
+                            <div id="tool_contact">
+                                <label id="Tcontact_Label" for="Tcontact">
+                                    طريقة التواصل:
+                                </label></br>
+                                <div id="checkBoxContact" name="Tcontact" required>
+                                    <input type="checkbox" id="Tcontact1" name="Tcontact" value="email"
+                                        onclick="ContactTextBox()">
+                                    <label for="Tcontact1">بريد الكتروني</label><br>
+
+                                    <input style="margin-right: 25%; width: 400px;" type="email" id="Temail"
+                                        name="Tcontact" placeholder="YourEmail@email.com" hidden="true"
+                                        required><br><br>
+
+                                    <input type="checkbox" id="Tcontact2" name="Tcontact" value="phone"
+                                        onclick="ContactTextBox()">
+                                    <label for="Tprice1">جوال</label><br>
+
+                                    <input style="margin-right: 25%; width: 400px;" type="tel" id="Tphone"
+                                        name="Tcontact" placeholder="55-5555-555" pattern="[0-5]{2}-[0-9]{4}-[0-9]{3}"
+                                        hidden="true" required>
+                                    <br></br>
+
+                                    <script>
+                                        function ContactTextBox() {
+                                            var byEmail = document.getElementById("Tcontact1");
+                                            var byPhone = document.getElementById("Tcontact2");
+
+                                            var email = document.getElementById("Temail");
+                                            var phone = document.getElementById("Tphone");
+
+                                            //email.disabled = byEmail.checked ? false : true;
+
+                                            if (byEmail.checked) {
+                                                //phone.disabled;
+                                                email.hidden = false;
+                                                email.focus();
+                                            } else {
+                                                email.hidden = true;
+                                            }
+
+                                            if (byPhone.checked) {
+                                                phone.hidden = false;
+                                                phone.focus();
+                                            } else {
+                                                phone.hidden = true;
+                                            }
+
+                                            var btn = document.getElementById("submitbtn");
+                                            if (btn.click = true) {
+                                                if (!byEmail.checked && !byPhone.checked) {
+                                                    alert("You must check at least one checkbox.")
+                                                }
+                                            }
+
+                                        }
+                                    </script>
+                                </div>
+                            </div>
                         </div>
-                    </br></br>
+                        
                     </div>
 
                     <div id="bottom" style="margin-right: -2%;">
@@ -395,7 +436,8 @@ and open the template in the editor.
                             <label id="Tminfo_Label" for="Tminfo">
                                 المزيد من المعلومات:
                             </label></br>
-                            <textarea style="resize:none; margin-right: 10%;" id="Tminfo" name="Tminfo" cols="40" rows="2" placeholder="اضف المزيد من المعلومات عن المنتج..." required></textarea>
+                            <textarea style="resize:none; margin-right: 10%;" id="Tminfo" name="Tminfo" cols="40"
+                                rows="2" placeholder="اضف المزيد من المعلومات عن المنتج..." required></textarea>
                             </br></br>
                             </br></br>
                         </div>
@@ -407,38 +449,55 @@ and open the template in the editor.
                             <input type="file" multiple id="Tpics" name="Tpics" required></br></br>
                         </div>
 
-                        <div id="tool_vid">
-                            <label id="Tvid_Label" for="Tvid">
-                                اضافة فيديو:
-                            </label></br>
-                            <input type="file" id="Tvid" name="Tvid" ></br></br>
-                        </div>
-
                     </div>
 
+                    <script>
+                        function clicked() {
+                            var form = document.getElementById('myform');
+                            var hide = form.elements[i].hasAttribute('hidden');
+
+                            for (var i = 0; i < form.elements.length; i++) {
+                                if (form.elements[i].hasAttribute('required')&&!hide) {
+                                    alert('There are some required fields!');
+                                    return false;
+                                }
+                            }
+                            if (confirm('Do you want to submit?')) {
+                                form.submit();
+                            } else {
+                                return false;
+                            }
+
+                        }
+                    </script>
+
                     <div id="doneBTN">
-                        <input type="submit" id="submitbtn" value="اضافة"> </input>
+                        <button onclick="location.href = 'index.html';" id="backbtn">الغاء</button>
+                        <button type="submit" id="submitbtn" onclick="clicked()" value="اضافة">اضافة</button>
+                        <button type="reset" id="resetbtn" value="مسح">مسح الخانات</button>
                     </div>
 
                     <style>
-                        #doneBTN{
+                        #doneBTN {
                             text-align: center;
                             margin-right: -10%;
                             padding: 5%;
                         }
-                        #submitbtn{
+
+                        #submitbtn, #resetbtn, #backbtn {
                             background-color: #088178;
                             color: white;
                             text-align: center;
                             font-size: 23px;
                             height: 50px;
                             width: 200px;
-                            margin-right: auto;
+                            margin-right: 50px;
                             border-radius: 20px;
                             padding: 3px;
                             border: 1px solid #cce7d0;
                         }
-                        #submitbtn:hover{
+
+                        #submitbtn:hover, #resetbtn:hover, #backbtn:hover{
                             background-color: #cce7d0;
                             color: black;
                         }
@@ -448,8 +507,8 @@ and open the template in the editor.
             </div>
 
         </section>
-        
-        
+
+
         <footer class="section-p1">
             <div class="col">
                 <img class="logo" src="img/" alt="">
@@ -470,7 +529,7 @@ and open the template in the editor.
             </div>
 
             <div class="col">
-                 <h4>من نحن</h4>
+                <h4>من نحن</h4>
                 <a href="#">عنا</a>
                 <a href="#">سيايات الخصوصية</a>
                 <a href="#">Terms & condetions</a>
@@ -478,7 +537,7 @@ and open the template in the editor.
             </div>
 
             <div class="col">
-                 <h4>حسابي</h4>
+                <h4>حسابي</h4>
                 <a href="#">تسجيل الدخول</a>
                 <a href="#">المساعدة</a>
             </div>
@@ -487,5 +546,6 @@ and open the template in the editor.
         </footer>
     </div>
     <script src="script.js"></script>
-    </body>
+</body>
+
 </html>
