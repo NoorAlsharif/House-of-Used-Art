@@ -207,46 +207,48 @@ and open the template in the editor.
                             <label id="Tcontact_Label" for="Tcontact">
                                 طريقة التواصل:
                             </label></br>
+                            <div id="checkBoxContact" required>
+                                <input type="checkbox" id="Tcontact1" name="Tcontact" value="email" onclick="ContactTextBox()">
+                                <label for="Tcontact1">بريد الكتروني</label><br>
                             
-                            <input type="radio" id="Tcontact1" name="Tcontact" value="email" onclick="ContactTextBox()" required>
-                            <label for="Tcontact1">بريد الكتروني</label><br>
+                                <input style="margin-right: 25%; width: 400px;" type="email" id="Temail" name="Tcontact"
+                                    placeholder="YourEmail@email.com" hidden="true" required><br><br>
+                            
+                                <input type="checkbox" id="Tcontact2" name="Tcontact" value="phone" onclick="ContactTextBox()">
+                                <label for="Tprice1">جوال</label><br>
+                            
+                                <input style="margin-right: 25%; width: 400px;" type="tel" id="Tphone" name="Tcontact" placeholder="55-5555-555"
+                                    pattern="[0-5]{2}-[0-9]{4}-[0-9]{3}" hidden="true" required>
+                                <br></br>
+                            
+                                <script>
+                                    function ContactTextBox() {
+                                        var byEmail = document.getElementById("Tcontact1");
+                                        var byPhone = document.getElementById("Tcontact2");
 
-                            <input style="margin-right: 25%; width: 400px;" type="email" id="Temail" name="Tcontact" placeholder="YourEmail@email.com" hidden="true" required><br><br>
+                                        var email = document.getElementById("Temail");
+                                        var phone = document.getElementById("Tphone");
 
-                            <input type="radio" id="Tcontact2" name="Tcontact" value="phone" onclick="ContactTextBox()">
-                            <label for="Tprice1">جوال</label><br>
+                                        //email.disabled = byEmail.checked ? false : true;
 
-                            <input style="margin-right: 25%; width: 400px;" type="tel" id="Tphone" name="Tcontact" placeholder="55-5555-555" pattern="[0-5]{2}-[0-9]{4}-[0-9]{3}" hidden="true" required>
-                            <br></br>
+                                        if (byEmail.checked) {
+                                            //phone.disabled;
+                                            email.hidden = false;
+                                            email.focus();
+                                        }else{
+                                            email.hidden = true;
+                                        }
 
-                            <script>
-                                function ContactTextBox() {
-                                    var byEmail = document.getElementById("Tcontact1");
-                                    var byPhone = document.getElementById("Tcontact2");
-                                    
-                                    var email = document.getElementById("Temail");
-                                    var phone = document.getElementById("Tphone");
+                                        if (byPhone.checked) {
+                                            phone.hidden = false;
+                                            phone.focus();
+                                        }else{
+                                            phone.hidden = true;
+                                        }
 
-                                    //email.disabled = byEmail.checked ? false : true;
-
-                                    if(byEmail.checked){
-                                        //phone.disabled;
-                                        email.hidden=false;
-                                        email.focus();
-                                    }else{
-                                        email.hidden=true;
                                     }
-                                    
-                                    if(byPhone.checked){
-                                        phone.hidden=false;
-                                        phone.focus();
-                                    }else{
-                                        phone.hidden=true;
-                                    }
-                                    
-                                }
-                            </script>
-                        
+                                </script>
+                            </div>
                         </div>
                     </div>
 
@@ -257,7 +259,7 @@ and open the template in the editor.
                             </label></br>
 
                             <div class="dropdownMenu">
-                                <select class="dropdown" id="Tsection" name="Tsection" onchange="changingList()" required>
+                                <select class="dropdown" id="Tsection" name="Tsection" onchange="changingList(), addTextBox()" required>
                                     <option value="" disabled selected>اختر قسم المنتج</option>
                                     <option value="sewing">الحياكة والتطريز</option>
                                     <option value="canvas">اللوحات</option>
@@ -265,6 +267,21 @@ and open the template in the editor.
                                     <option value="other">غير ذالك</option>
                                 </select>
                             </div>
+                            <br>
+                            <input style="margin-right: 15%; width: 300px;" type="text" id="TsectionOther" name="TsectionOther" hidden="true" onchange="addTextBox()">
+                            </br>
+
+                            <script>
+                                function addTextBox(){
+                                    var otherChoice = document.getElementById("Tsection").selectedIndex;
+                                    if (otherChoice == 4) {
+                                        document.getElementById("TsectionOther").hidden=false;
+                                    }else{
+                                        document.getElementById("TsectionOther").hidden=true;
+                                    }
+                                }
+
+                            </script>
                         </div>
 
                     </br></br>
@@ -275,10 +292,13 @@ and open the template in the editor.
                             </label></br>
                             
                             <div class="dropdownMenu">
-                                <select class="dropdown" id="Ttype" name="Ttype" required>
+                                <select class="dropdown" id="Ttype" name="Ttype" onchange="OtherOption()" required>
                                     <option value="" disabled selected>اختر نوع المنتج</option>
                                 </select>
                             </div>
+                            <br>
+                            <input style="margin-right: 15%; width: 300px;" type="text" id="TtypeOther" name="TtypeOther" hidden="false" onchange="OtherOption()">
+                            </br>
 
                             <script>
                                 var tools = {};
@@ -324,8 +344,29 @@ and open the template in the editor.
                                         for (i = 0; i < addTool.length; i++) {
                                             var newTool = new Option(addTool[i], i);
                                             type.options.add(newTool);
+                                            newTool.setAttribute("value","tool "+i);
+                                            //console.log(newTool);
                                         }
                                     }
+                                }
+
+                                function OtherOption(){
+                                    //var otherChoice = document.getElementById("Ttype").selectedIndex;
+                                    var otherChoice = document.getElementById("Ttype");
+                                    var text = otherChoice.options.length -1;
+                                    
+                                    var str = "آخر";
+
+                                    var op = otherChoice.options[otherChoice.length-1];
+
+                                    var choice = otherChoice.selectedIndex(op);
+
+                                    if (choice =) {
+                                        document.getElementById("TtypeOther").hidden=false;
+                                    }else{
+                                        document.getElementById("TtypeOther").hidden=true;
+                                    }
+
                                 }
                             </script>
                         </div>
