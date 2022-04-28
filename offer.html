@@ -276,6 +276,7 @@ and open the template in the editor.
                                     var otherChoice = document.getElementById("Tsection").selectedIndex;
                                     if (otherChoice == 4) {
                                         document.getElementById("TsectionOther").hidden=false;
+                                        
                                     }else{
                                         document.getElementById("TsectionOther").hidden=true;
                                     }
@@ -321,6 +322,21 @@ and open the template in the editor.
                                     'صحن دوار',
                                     'قوالب تشكيل',
                                     'اخر'];
+                                
+                                tools['other'] = [
+                                    'ابر',
+                                    'خيوط',
+                                    'اقمشة',
+                                    'طارة',
+                                    'فرش',
+                                    'مزيل الوان',
+                                    'الوان',
+                                    'لوحة الوان',
+                                    'ادوات نحت',
+                                    'صحن دوار',
+                                    'قوالب تشكيل',
+                                    'آخر'
+                                    ]
 
                                 function changingList() {
                                     var section = document.getElementById("Tsection");
@@ -361,7 +377,7 @@ and open the template in the editor.
 
                                     var choice = otherChoice.selectedIndex(op);
 
-                                    if (choice =) {
+                                    if (choice = true) {
                                         document.getElementById("TtypeOther").hidden=false;
                                     }else{
                                         document.getElementById("TtypeOther").hidden=true;
