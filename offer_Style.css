@@ -1,0 +1,52 @@
+label {
+    padding-right: 3%;
+    font-size: 18px;
+    /*width: 100%;*/
+}
+
+div input {
+    margin-right: 15%;
+    border-radius: 10px;
+    height: 40px;
+    /*width: 100%;*/
+}
+
+.dropdown {
+    background-color: #f1f1f1;
+    color: black;
+
+    font-size: 18px;
+    margin-top: 3%;
+    margin-right: 15%;
+    border-radius: 10px;
+
+    padding-right: 5%;
+
+    height: 40px;
+    width: 200px;
+    border: none;
+}
+
+#doneBTN {
+    text-align: center;
+    margin-right: -10%;
+    padding: 5%;
+}
+
+#submitbtn, #resetbtn, #backbtn {
+    background-color: #088178;
+    color: white;
+    text-align: center;
+    font-size: 23px;
+    height: 50px;
+    width: 200px;
+    margin-right: 50px;
+    border-radius: 20px;
+    padding: 3px;
+    border: 1px solid #cce7d0;
+}
+
+#submitbtn:hover, #resetbtn:hover, #backbtn:hover{
+    background-color: #cce7d0;
+    color: black;
+}

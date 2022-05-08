@@ -6,17 +6,11 @@ document.querySelector('#search-btn').onclick = () => {
 }
 
 
-
 let loginForm = document.querySelector('.login-form');
 
 document.querySelector('#login-btn').onclick = () => {
     loginForm.classList.toggle('active');
 }
-
-
-
-
-
 
 
 window.onscroll = () => {
@@ -25,8 +19,6 @@ window.onscroll = () => {
 
 
 }
-
-
 
 
 var minSlider = document.getElementById('min');
@@ -92,8 +84,6 @@ function showCheckboxes2() {
 }
 
 
-
-
 var expanded3 = false;
 
 function showCheckboxes3() {
@@ -108,7 +98,6 @@ function showCheckboxes3() {
 }
 
 
-
 // Get the modal signup page
 var modal = document.getElementById('id01');
 
@@ -119,11 +108,7 @@ window.onclick = function (event) {
     }
 }
 
-
-
-
 /*change lest content*/
-
 
 
 function ChangeSecondList(value)
