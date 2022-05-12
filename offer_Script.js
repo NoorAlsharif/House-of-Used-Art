@@ -18,44 +18,30 @@ function EnableTextBox() {
  * this code will change the tool type menu displayed to the seller
  * according to what was selected in the tool section menu
  */
- var tools = {};
+ var tools = {
+   sewing: ["ابر", "خيوط", "اقمشة", "طارة", "آخر"],
 
- tools['sewing'] = [
-     'ابر',
-     'خيوط',
-     'اقمشة',
-     'طارة',
-     'آخر'];
+   canvas: ["فرش", "مزيل الوان", "الوان", "لوحة الوان", "آخر"],
 
- tools['canvas'] = [
-     'فرش',
-     'مزيل الوان',
-     'الوان',
-     'لوحة الوان',
-     'آخر'];
+   glass: ["ادوات نحت", "صحن دوار", "قوالب تشكيل", "اخر"],
 
- tools['glass'] = [
-     'ادوات نحت',
-     'صحن دوار',
-     'قوالب تشكيل',
-     'اخر'];
+   other: [
+     "ابر",
+     "خيوط",
+     "اقمشة",
+     "طارة",
+     "فرش",
+     "مزيل الوان",
+     "الوان",
+     "لوحة الوان",
+     "ادوات نحت",
+     "صحن دوار",
+     "قوالب تشكيل",
+     "آخر",
+   ],
+ };
 
- tools['other'] = [
-     'ابر',
-     'خيوط',
-     'اقمشة',
-     'طارة',
-     'فرش',
-     'مزيل الوان',
-     'الوان',
-     'لوحة الوان',
-     'ادوات نحت',
-     'صحن دوار',
-     'قوالب تشكيل',
-     'آخر'
- ]
-
- function changingList() {
+ function changingList(newTool) {
      var section = document.getElementById("Tsection");
      var type = document.getElementById("Ttype");
 
@@ -141,8 +127,7 @@ function EnableTextBox() {
        } else {
            return false;
        }
-
-   }
+    }
 
    
 
