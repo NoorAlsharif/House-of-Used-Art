@@ -1,4 +1,11 @@
 //JavaScript for the offer page
+function checkPage(){
+    return "This is the offer_Script page";
+}
+module.exports = {
+    log: jest.fn(() => "This is the offer_Script page")
+}
+
 /**
  * this is code for enabling an input box for the cost to be entered 
  * if the seller chooses to sell the product
